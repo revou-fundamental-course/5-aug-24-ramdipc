@@ -381,6 +381,11 @@ input[type="number"] {
   color: white;
 }
 
+.footer-ramdi {
+    margin-top: 9px;
+    text-align: center;
+}
+
 .d-none {
   display: none;
 }
