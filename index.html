@@ -1,13 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="">
-    
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator BMI</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="css\style.css" />
+
+    <!-- Icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets\apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets\favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/site.webmanifest" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="text-center">Kalkulator BMI</h1>
+    </header>
+
+    <main class="d-flex">
+  <!-- Form Section BMI -->
+      <section id="form-section" class="section">
+        <h2 class="text-center">Form</h2>
+        <form class="d-flex flex-column card" id="form" novalidate>
+          <label>Jenis Kelamin</label>
+          <select name="jenis-kelamin" id="jenis-kelamin" class="custom-select">
+            <option value="Pria" selected>Pria</option>
+            <option value="Wanita">Wanita</option>
+          </select>
+          <label for="umur">Umur (Tahun)</label>
+          <input type="number" name="umur" id="umur" min="0" required />
+          <p id="umur-error" class="error d-none">
+            Umur harus diisi angka diatas 1.
+          </p>
+          <label for="berat-badan">Berat Badan (kg)</label>
+          <input
+            id="berat-badan"
+            type="number"
+            name="berat-badan"
+            min="1"
+            step="0.1"
+            required
+          />
+          <p id="berat-error" class="error d-none">
+            Berat badan harus diisi angka diatas 1.
+          </p>
+          <label for="tinggi-badan">Tinggi Badan (cm)</label>
+          <input
+            type="number"
+            name="tinggi-badan"
+            id="tinggi-badan"
+            min="1"
+            step="0.1"
+            required
+          />
+          <p id="tinggi-error" class="error d-none">
+            Tinggi badan harus diisi angka diatas 1.
+          </p>
+          <div class="d-flex justify-content-end gap">
+            <button type="reset" class="btn btn-reset">Reset</button>
+            <button type="submit" class="btn btn-submit">Submit</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Result Section -->
+      <section id="result-section" class="section">
+        <h2 class="text-center">Hasil</h2>
+        <div class="d-flex flex-column text-center card" id="result">
+          <span id="status-bmi" class="fw-bold"></span>
+          <span id="info"></span>
+          <h3 id="nilai-bmi"></h3>
+          <span id="keterangan-bmi"></span>
+        </div>
+        <p id="details"></p>
+      </section>
+    </main>
+
+    <footer class="text-center">
+      <p>
+        Ramdipc
+      </p>
+    </footer>
+
+    <!-- Learn More Button -->
+    <button id="learn" class="btn btn-submit">?</button>
+
+    <!-- Learn More Modal -->
+    <div id="learn-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span id="close-modal" class="close">&times;</span>
+          <h2>Body Mass Index</h2>
+        </div>
+        <div class="modal-body">
+          <h3>Apa itu BMI?</h3>
+          <p>
+            Body Mass Index (BMI) adalah cara menghitung berat badan ideal
+            berdasarkan tinggi dan berat badan. BMI juga dapat dibedakan
+            berdasarkan usia.
+          </p>
+          <h3>Apa itu Kalkulator BMI?</h3>
+          <p>
+            Kalkulator BMI adalah alat untuk mengidentifikasi apakah berat badan
+            kamu termasuk dalam kategori ideal atau tidak. Kalkulator ini dapat
+            digunakan oleh seseorang yang berusia 20 tahun ke atas.
+          </p>
+          <div class="text-center">
+            <img
+              id="bmi-img"
+              src="assets\bmi.webp"
+              alt="Rumus dan Kategori BMI"
+            />
+          </div>
+          <p>
+            Perlu diingat bahwa Kalkulator BMI ini tidak dapat diaplikasikan
+            untuk ibu hamil dan anak-anak karena standar BMI yang berbeda. Hal
+            yang perlu diperhatikan pada Kalkulator BMI:
+          </p>
+          <ul>
+            <li>BMI Normal berada pada kisaran 18.5-24.9</li>
+            <li>
+              Jika angka BMI melebihi 25, maka kamu memiliki berat badan
+              berlebih
+            </li>
+            <li>
+              Jika angka BMI berada di bawah 18.5, maka kamu memiliki berat
+              badan rendah
+            </li>
+            <li>
+              Jika angka BMI sudah melebihi angka 30, sebaiknya segera dilakukan
+              penanganan untuk mencegah timbulnya penyakit
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-submit" id="close">Tutup</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js\script.js"></script>
+  </body>
 </html>
